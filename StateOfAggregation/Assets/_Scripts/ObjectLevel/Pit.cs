@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Pit : MonoBehaviour
 {
+    [SerializeField]
+    private bool _isGrating;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="Player")
+        if (other.tag == "Player")
         {
-            StaticManager.IsStartGame = false;
-            other.isTrigger = true;
+            if (!_isGrating)
+            {
+                StaticManager.IsStartGame = false;
+                other.isTrigger = true;
+            }
+            else
+            {
+                if (other.gameObject.layer==8)
+                {
+                    StaticManager.IsStartGame = false;
+                    other.isTrigger = true;
+                }
+            }
         }
     }
 }

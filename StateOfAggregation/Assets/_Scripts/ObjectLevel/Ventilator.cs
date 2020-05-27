@@ -26,7 +26,7 @@ public class Ventilator : MonoBehaviour
     {
         if (other.tag=="Player")
         {
-            other.GetComponent<Rigidbody>().AddForce(_direction * _power,ForceMode.Acceleration);
+            other.GetComponent<PlayerControl>().Push(_direction,_power);
         }
     }
 }

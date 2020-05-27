@@ -8,13 +8,9 @@ public class CameraControl : MonoBehaviour
     private Transform _spher;
     [SerializeField]
     private Vector3 _targetPos;
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = _spher.position - _targetPos;
+        if (StaticManager.IsStartGame)
+            transform.position = _spher.position - _targetPos;
     }
 }

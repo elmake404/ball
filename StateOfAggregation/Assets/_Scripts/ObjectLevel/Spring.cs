@@ -10,7 +10,7 @@ public class Spring : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Rigidbody>().AddForce(Vector3.up * _forseSpring, ForceMode.Acceleration);
+            other.GetComponent<PlayerControl>().Push(Vector3.up , _forseSpring);
         }
 
     }
