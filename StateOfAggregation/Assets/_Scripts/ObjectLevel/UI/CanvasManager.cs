@@ -23,14 +23,10 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        if (StaticManager.IsGameOver||StaticManager.IsGameWin)
+        if (StaticManager.IsGameOver || StaticManager.IsGameWin)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-    private void FixedUpdate()
-    {
-
     }
     public float TimeIce()
     {
@@ -50,15 +46,47 @@ public class CanvasManager : MonoBehaviour
 
         return _fillSteam.fillAmount;
     }
-    public void Recovery()
+    public void RecoverySteamExtra()
+    {
+        if (_fillSteam.fillAmount < 0.5f)
+        {
+            _fillSteam.fillAmount = 0.5f;
+        }
+    }
+    public void RecoveryIce()
+    {
+        if (_fillIce.fillAmount < 1)
+        {
+            _fillIce.fillAmount += 0.01f;
+        }
+    }
+    public void RecoverySteem()
     {
         if (_fillSteam.fillAmount < 1)
         {
             _fillSteam.fillAmount += 0.01f;
         }
-        if (_fillIce.fillAmount < 1)
+    }
+    public bool GetIce()
+    {
+        if (_fillIce.fillAmount>=0.5f)
         {
-            _fillIce.fillAmount += 0.01f;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool GetSteam()
+    {
+        if (_fillSteam.fillAmount>=0.5f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

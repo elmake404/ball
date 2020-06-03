@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93f0db1fa31ed34dad64dd01abfbf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvasManager: {fileID: 0}
   _rb: {fileID: 2518040473969743387}
   _water: {fileID: 2100000, guid: 5d76788625ea9d848a6b072dcd7827a6, type: 2}
   _steam: {fileID: 2100000, guid: b3580a6b9adceff4b859cb23b8dbc312, type: 2}
@@ -101,6 +102,7 @@ MonoBehaviour:
   _mesh: {fileID: 8903456876413076963}
   _speed: 13
   _speedSteem: 5
+  _timeState: 0.3
 --- !u!135 &4069881213030626642
 SphereCollider:
   m_ObjectHideFlags: 0
