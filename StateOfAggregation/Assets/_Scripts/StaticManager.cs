@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class StaticManager 
 {
-    public static bool IsStartGame;
+    public static bool IsStartGame,IsGameWin,IsGameOver;
 }

@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Ventilator : MonoBehaviour
 {
+    [SerializeField]
     private Vector3 _direction;
 
     [SerializeField]
     private float _power;
-    [SerializeField]
-    private bool _suck;
+    //[SerializeField]
+    //private bool _suck;
     private void Start()
     {
-        if (_suck)
-        {
-            _direction = -transform.forward;
-        }
-        else
-        {
-            _direction = transform.forward;
+        //if (_suck)
+        //{
+        //    _direction = -transform.forward;
+        //}
+        //else
+        //{
+        //    _direction = transform.forward;
 
-        }
+        //}
     }
     private void OnTriggerStay(Collider other)
     {

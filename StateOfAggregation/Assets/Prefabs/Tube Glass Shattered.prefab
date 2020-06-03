@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4619300938169834359}
   - component: {fileID: 7755487412969457195}
   - component: {fileID: 1486906844295383760}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488626733235715467}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6107602098970524378}
   - component: {fileID: 1654813584823611865}
   - component: {fileID: 5080935216973472589}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 6466082464156950126}
   - component: {fileID: 3881844935023868526}
   - component: {fileID: 1900282435727253898}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 4814400443062755646}
   - component: {fileID: 79258740912976446}
   - component: {fileID: 3420428801681294574}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1220857336453627185}
   - component: {fileID: 5953594272342536019}
   - component: {fileID: 870578833871578057}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 3672680386325664911}
   - component: {fileID: 3051716608990163389}
   - component: {fileID: 66350397879308784}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 5183804772414830086}
   - component: {fileID: 8740018447744021560}
   - component: {fileID: 2130507125834120584}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 8641649686739329595}
   - component: {fileID: 5840889574742139032}
   - component: {fileID: 8042124960963811204}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5064697367546614228}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Glass_Shattered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,8 +711,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4577636679438446105}
-  m_Layer: 0
-  m_Name: Glass
+  - component: {fileID: 3067635012782095674}
+  - component: {fileID: 6232408698247527645}
+  m_Layer: 16
+  m_Name: Tube Glass Shattered
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,6 +737,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3067635012782095674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611250158046380859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9378796, y: 2.7192419, z: 0.1}
+  m_Center: {x: 0.08313227, y: 0.26, z: 0}
+--- !u!114 &6232408698247527645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611250158046380859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b945ff4525c90e748b56e950e4402f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gateway:
+  - {fileID: 6493251482626288797}
+  - {fileID: 2329787028401340823}
+  - {fileID: 6878167090658897632}
+  - {fileID: 1000409709955424202}
+  - {fileID: 915705678694748215}
+  - {fileID: 8425691479566467803}
+  - {fileID: 1501514561216369372}
+  - {fileID: 3811700388213876798}
+  - {fileID: 237845176952066721}
+  - {fileID: 237845176952066721}
+  - {fileID: 8437905890462304072}
 --- !u!1 &8425691479566467803
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +785,7 @@ GameObject:
   - component: {fileID: 799741383175148694}
   - component: {fileID: 4147229185803342941}
   - component: {fileID: 4100594751296036031}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +864,7 @@ GameObject:
   - component: {fileID: 18199666409071603}
   - component: {fileID: 7609348246971237675}
   - component: {fileID: 3288643757304517422}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Disc_Shattered_Shard_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +943,7 @@ GameObject:
   - component: {fileID: 823099678640342762}
   - component: {fileID: 6466033062262617622}
   - component: {fileID: 8386043402790312300}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Tube_1_2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

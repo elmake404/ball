@@ -20,6 +20,7 @@ public class Pit : MonoBehaviour
                 if (other.gameObject.layer==8)
                 {
                     StaticManager.IsStartGame = false;
+                    StaticManager.IsGameOver = true;
                     other.isTrigger = true;
                 }
             }

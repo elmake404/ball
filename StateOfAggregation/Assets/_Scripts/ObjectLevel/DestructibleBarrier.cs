@@ -28,6 +28,7 @@ public class DestructibleBarrier : MonoBehaviour
             else if (other.gameObject.layer == 8 || other.gameObject.layer == 9)
             {
                 StaticManager.IsStartGame = false;
+                StaticManager.IsGameOver = true;
                 other.GetComponent<PlayerControl>().Destruction();
             }
 

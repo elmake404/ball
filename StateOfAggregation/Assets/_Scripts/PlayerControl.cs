@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField]
+    private CanvasManager _canvasManager;
+    [SerializeField]
     private Rigidbody _rb;
     private Vector3 _startPos = new Vector3(0.5f, 0.5f, 0), _currentPos = new Vector3(0.5f, 0.5f, 0), _normPos;
     private Camera _cam;
@@ -22,7 +24,6 @@ public class PlayerControl : MonoBehaviour
         _isEvaporate = false;
         _isDoNotRecord = false;
 
-        StaticManager.IsStartGame = true;
         _mesh.material = _water;
         _normPos = transform.position;
         _cam = Camera.main;
@@ -36,14 +37,14 @@ public class PlayerControl : MonoBehaviour
                 _isDoNotRecord = true;
 
                 _isCoolOff = false;
-                _startPos = _cam.ScreenToViewportPoint(Input.mousePosition);
+                _startPos = _currentPos;
             }
             if (_isEvaporate)
             {
                 _isDoNotRecord = true;
 
                 _isEvaporate = false;
-                Vector3 viewportPoint = _cam.ScreenToViewportPoint(Input.mousePosition);
+                Vector3 viewportPoint = _currentPos;
                 _startPos = viewportPoint - new Vector3(0, 0.045f, 0);
             }
 
@@ -103,6 +104,25 @@ public class PlayerControl : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * _speedSteem, ForceMode.Acceleration);
             }
+
+            if (gameObject.layer == 10)
+            {
+                if (_canvasManager.TimeIce() <= 0)
+                {
+                    _isCoolOff = true;
+                }
+            }
+            if (gameObject.layer == 9)
+            {
+                if (_canvasManager.TimeSteam() <= 0)
+                {
+                    _isCoolOff = true;
+                }
+            }
+            if (gameObject.layer == 8)
+            {
+                _canvasManager.Recovery();
+            }
         }
     }
     public void Push(Vector3 Direction, float Power)
@@ -123,6 +143,17 @@ public class PlayerControl : MonoBehaviour
         else if (gameObject.layer == 8)
         {
             _isEvaporate = true;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Finish")
+        {
+            StaticManager.IsGameWin = true;
+        }
+        if (other.tag == "Abyss")
+        {
+            StaticManager.IsGameOver = true;
         }
     }
 }
