@@ -9,20 +9,6 @@ public class Ventilator : MonoBehaviour
 
     [SerializeField]
     private float _power;
-    //[SerializeField]
-    //private bool _suck;
-    private void Start()
-    {
-        //if (_suck)
-        //{
-        //    _direction = -transform.forward;
-        //}
-        //else
-        //{
-        //    _direction = transform.forward;
-
-        //}
-    }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag=="Player")
