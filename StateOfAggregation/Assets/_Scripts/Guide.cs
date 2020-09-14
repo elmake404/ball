@@ -19,8 +19,8 @@ public class Guide : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log((transform.position - _player.transform.position).magnitude);
-        if ((transform.position - _player.transform.position).magnitude < 1f && _progress != 1)
+        //Debug.Log((transform.position - _player.transform.position).normalized);
+        if ((transform.position - _player.transform.position).magnitude < 1.5f && _progress != 1)
         {
             while (true)
             {
@@ -31,11 +31,39 @@ public class Guide : MonoBehaviour
                     break;
                 }
                 transform.position = _spline.GetPoint(_progress);
-                if ((transform.position - _player.transform.position).magnitude >= 3)
+                if ((transform.position - _player.transform.position).magnitude >= 2)
                 {
+                    //RaycastHit hitNear;
+                    //Physics.Raycast(transform.position, -transform.up, out hitNear, 5f);
+                    //transform.up = hitNear.normal;
+
+                    //transform.position = hitNear.point /*+ Vector3.up/1.4f*/ ;
+
                     break;
                 }
             }
         }
+    }
+    public void StandNextToMe()
+    {
+        float ProgresPlayer;
+        float DurationPlayer;
+        while (true)
+        {
+            if ((transform.position - _player.transform.position).magnitude <= 0.5f)
+            {
+                break;
+            }
+
+            _progress += _duration/10;
+            if (_progress > 1f)
+            {
+                _progress = 1f;
+                break;
+            }
+            transform.position = _spline.GetPoint(_progress);
+
+        }
+
     }
 }

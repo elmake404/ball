@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3417225437857778642}
   - component: {fileID: 1643016426930076480}
   - component: {fileID: 8903456876413076963}
-  - component: {fileID: 2670413232196946539}
   - component: {fileID: 4069881213030626642}
   - component: {fileID: 2518040473969743387}
+  - component: {fileID: 6172490998114298843}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -82,27 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2670413232196946539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2418558111552783318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e93f0db1fa31ed34dad64dd01abfbf16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvasManager: {fileID: 0}
-  _rb: {fileID: 2518040473969743387}
-  _water: {fileID: 2100000, guid: 5d76788625ea9d848a6b072dcd7827a6, type: 2}
-  _steam: {fileID: 2100000, guid: b3580a6b9adceff4b859cb23b8dbc312, type: 2}
-  _ice: {fileID: 2100000, guid: 422b2ed3ca9908a488d2d69a42e9f6b1, type: 2}
-  _mesh: {fileID: 8903456876413076963}
-  _speed: 13
-  _speedSteem: 5
-  _timeState: 0.3
 --- !u!135 &4069881213030626642
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -132,3 +111,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6172490998114298843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2418558111552783318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98099d41c91c9a3478c12809a3b74d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  _rb: {fileID: 2518040473969743387}
+  _water: {fileID: 0}
+  _steam: {fileID: 0}
+  _ice: {fileID: 0}
+  _mesh: {fileID: 0}
+  _speed: 50
