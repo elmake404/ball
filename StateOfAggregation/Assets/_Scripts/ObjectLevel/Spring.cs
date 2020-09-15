@@ -6,12 +6,20 @@ public class Spring : MonoBehaviour
 {
     [SerializeField]
     private float _forseSpring;
+    [SerializeField]
+    private Vector3 _direction;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerControl>().Push(Vector3.up , _forseSpring);
+            if (Player.PlayerMain.gameObject.layer == 10)
+            {
+                Player.PlayerMain.Push(_direction, _forseSpring);
+            }
+            else
+            {
+                Player.PlayerMain.Destruction();
+            }
         }
-
     }
 }

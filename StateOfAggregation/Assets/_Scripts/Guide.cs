@@ -46,15 +46,17 @@ public class Guide : MonoBehaviour
     }
     public void StandNextToMe()
     {
-        float ProgresPlayer;
-        float DurationPlayer;
+        float Magnitude = (transform.position - _player.transform.position).magnitude;
+
+        if (Magnitude <= 1f)
+        {
+            return;
+        }
+
+        Vector3 OldPos = transform.position;
+
         while (true)
         {
-            if ((transform.position - _player.transform.position).magnitude <= 0.5f)
-            {
-                break;
-            }
-
             _progress += _duration/10;
             if (_progress > 1f)
             {
@@ -62,6 +64,11 @@ public class Guide : MonoBehaviour
                 break;
             }
             transform.position = _spline.GetPoint(_progress);
+
+            if ((transform.position - OldPos).magnitude >= Magnitude)
+            {
+                break;
+            }
 
         }
 

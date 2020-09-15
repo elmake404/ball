@@ -123,10 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98099d41c91c9a3478c12809a3b74d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  _target: {fileID: 0}
+  _colliderMain: {fileID: 4069881213030626642}
   _rb: {fileID: 2518040473969743387}
-  _water: {fileID: 0}
-  _steam: {fileID: 0}
-  _ice: {fileID: 0}
-  _mesh: {fileID: 0}
+  _waterMaterial: {fileID: 2100000, guid: 5d76788625ea9d848a6b072dcd7827a6, type: 2}
+  _steamMaterial: {fileID: 2100000, guid: b3580a6b9adceff4b859cb23b8dbc312, type: 2}
+  _iceMaterial: {fileID: 2100000, guid: 422b2ed3ca9908a488d2d69a42e9f6b1, type: 2}
+  _meshMain: {fileID: 8903456876413076963}
   _speed: 50
+  _buffSpeed: 0

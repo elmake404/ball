@@ -8,10 +8,7 @@ public class Lattice : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StaticManager.IsStartGame = false;
-            StaticManager.IsGameOver = true;
-
-            other.GetComponent<PlayerControl>().Destruction();
+            Player.PlayerMain.Destruction();
         }
     }
 
