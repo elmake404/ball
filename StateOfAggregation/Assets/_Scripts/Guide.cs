@@ -10,9 +10,13 @@ public class Guide : MonoBehaviour
     [SerializeField]
     private float _duration;
     private float _progress;
-    void Start()
+    private void Awake()
     {
         transform.position = _spline.GetPoint(0);
+
+    }
+    void Start()
+    {
 
         _player = Player.PlayerMain;
     }
