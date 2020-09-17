@@ -41,10 +41,10 @@ public class Player : MonoBehaviour
                     direction = (_target.transform.position - transform.position).normalized;
                     _rb.AddForce(direction * (_speed + _buffSpeed), ForceMode.Acceleration);
                 }
-                else
-                {
-                    _rb.AddForce(Vector3.forward*2, ForceMode.Acceleration);
-                }
+                //else
+                //{
+                //    _rb.AddForce(Vector3.forward*2, ForceMode.Acceleration);
+                //}
             }
         }
     }
@@ -104,15 +104,15 @@ public class Player : MonoBehaviour
         gameObject.layer = 8;
         _colliderMain.isTrigger = false;
         _rb.useGravity = true;
-        //_rb.drag = 1.7f;
+        _rb.drag = 1.7f;
         _meshMain.material = _waterMaterial;
     }
     public void Ice()
     {
         gameObject.layer = 10;
         _colliderMain.isTrigger = false;
-        //_rb.drag = 1;
-        _rb.useGravity = true;
+        _rb.drag = 1;
+        _rb.useGravity = true; 
         _meshMain.material = _iceMaterial;
     }
     public void Steam()
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         gameObject.layer = 9;
         _colliderMain.isTrigger = true;
         _rb.useGravity = false;
-        //_rb.drag = 1.7f;
+        _rb.drag = 1.7f;
 
         _meshMain.material = _steamMaterial;
     }
